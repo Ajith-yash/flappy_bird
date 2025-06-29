@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Bird | Classic Web Game</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-dove"></i> FLAPPY BIRD</h1>
+        <p class="header-subtitle">The classic game now in your browser! Avoid pipes and set a new high score.</p>
+    </header>
+
+    <div class="container">
+        <section class="game-section">
+            <div class="game-container">
+                <div class="current-score">0</div>
+                
+                <div id="start-screen" class="screen">
+                    <h1 class="game-title">FLAPPY BIRD</h1>
+                    <div class="instructions">
+                        <p>Press SPACE or CLICK to flap wings</p>
+                        <p>Avoid the pipes and don't hit the ground!</p>
+                    </div>
+                    <button id="start-btn" class="btn">START GAME</button>
+                    <footer>Press any key to jump</footer>
+                </div>
+                
+                <div id="game-over-screen" class="screen game-over hidden">
+                    <h2>GAME OVER</h2>
+                    <div class="score-display">0</div>
+                    <div class="high-score">High Score: 0</div>
+                    <button id="restart-btn" class="btn">PLAY AGAIN</button>
+                    <footer>Created with HTML5 Canvas</footer>
+                </div>
+                
+                <canvas id="game-canvas" width="400" height="500"></canvas>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <h2><i class="fas fa-info-circle"></i> ABOUT THE GAME</h2>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-trophy"></i>
+                    <h3>Challenge</h3>
+                    <p>Test your reflexes and timing skills</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Dynamic</h3>
+                    <p>Randomly generated obstacles</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-save"></i>
+                    <h3>Progress</h3>
+                    <p>High scores saved locally</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Responsive</h3>
+                    <p>Works on all devices</p>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <h3><i class="fas fa-gamepad"></i> CONTROLS</h3>
+                <ul>
+                    <li><span class="key">SPACE</span> Press to make the bird flap</li>
+                    <li><span class="key">CLICK</span> Tap anywhere to flap</li>
+                    <li><span class="key">UP</span> Arrow key to flap</li>
+                    <li><span class="key">R</span> Restart after game over</li>
+                </ul>
+            </div>
+            
+            <div class="about">
+                <h3><i class="fas fa-history"></i> HISTORY</h3>
+                <p>Flappy Bird took the world by storm in 2013 with its simple yet addictive gameplay. This web version stays true to the original while adding modern features.</p>
+                <p>The game requires precise timing and concentration as you navigate through pipes. Each pipe you pass gives you one point - how high can you score?</p>
+            </div>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </section>
+    </div>
+
+    <footer class="copyright">
+        <p>&copy; 2023 Flappy Bird Web Edition | Created with HTML5, CSS3, and JavaScript</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

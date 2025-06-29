@@ -1,0 +1,342 @@
+/* main.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+header {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 10;
+}
+
+header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    color: #ffd700;
+    text-shadow: 3px 3px 0 #d40000;
+    letter-spacing: 3px;
+}
+
+.header-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 5;
+}
+
+.game-section {
+    flex: 1;
+    min-width: 350px;
+    max-width: 500px;
+}
+
+.info-section {
+    flex: 1;
+    min-width: 350px;
+    max-width: 600px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.game-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+canvas {
+    background: linear-gradient(to bottom, #87CEEB, #E0F7FA);
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    transition: opacity 0.5s;
+    z-index: 10;
+}
+
+.screen.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+h1, h2, h3 {
+    margin-bottom: 1.5rem;
+    color: #ffd700;
+}
+
+.game-title {
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 0 #d40000;
+}
+
+.score-display {
+    font-size: 80px;
+    font-weight: bold;
+    margin: 20px 0;
+    color: white;
+    text-shadow: 3px 3px 0 #000;
+}
+
+.instructions {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+    font-size: 18px;
+    max-width: 300px;
+    line-height: 1.6;
+}
+
+.btn {
+    background: linear-gradient(to bottom, #FFD700, #FFA500);
+    color: #8B4513;
+    border: none;
+    padding: 15px 40px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 15px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.current-score {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 0 #000;
+    z-index: 5;
+}
+
+.game-over .score-display {
+    font-size: 60px;
+}
+
+.game-over .high-score {
+    font-size: 30px;
+    margin: 10px 0;
+    color: #FFD700;
+}
+
+footer {
+    position: absolute;
+    bottom: 15px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+}
+
+.info-section h2 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 0 #000;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1.2rem;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.feature-card i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #ffd700;
+}
+
+.controls {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.controls ul {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.controls li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+.controls li:last-child {
+    border-bottom: none;
+}
+
+.key {
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0.3rem 0.8rem;
+    border-radius: 5px;
+    margin-right: 1rem;
+    min-width: 40px;
+    text-align: center;
+    font-weight: bold;
+    color: #ffd700;
+}
+
+.about {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.about p {
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: #ffd700;
+    font-size: 1.5rem;
+    transition: all 0.3s;
+}
+
+.social-links a:hover {
+    background: #ffd700;
+    color: #1a2a6c;
+    transform: translateY(-5px);
+}
+
+.copyright {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.7);
+    margin-top: auto;
+    font-size: 1rem;
+}
+
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .game-section, .info-section {
+        width: 100%;
+        max-width: 600px;
+    }
+    
+    .features {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .game-container {
+        height: 400px;
+    }
+    
+    .info-section {
+        padding: 1.5rem;
+    }
+}
